@@ -1,0 +1,838 @@
+Linux Commands 1 :
+=======================
+PayPal   = Client 
+========================
+Computers = 
+Operating system - OS
+   80% Linux OS
+   20% Windows OS
+       Solaris OS
+       Mac-OS 
+   ''
+  Ownership of data center
+  Rent computing services  
+
+We are leveraging computing serviceS from AWS and GCP
+
+ Linus - 1991 
+
+
+ Linux OS =
+
+   Is an Open source OS = Free + code 
+
+  WINDOWS --> Microsoft 
+  Solaris --> Sun System
+
+
+Linus was a student who converted a problem into a business
+   
+ Solaris wasn't an open source = paid for 
+
+ Create a free Account in AWS =  
+
+    https://aws.amazon.com/ 
+
+CONNECTING TO LINUX SERVER IN AWS: 
+      host: 
+        PublicIP  = 3.233.222.45
+           Access the server from external Networks
+        privateIP = 172.31.8.197
+           Access the server from internal Networks
+      VPN
+      authentication:
+         SSH-key =  class25demo.pem  = pem file
+         password = 
+      
+      users details:
+      userName = ec2-user  
+          = default user
+
+      ssh-client Software :
+      mobaXterm or puTTY 
+Networking: 
+  ssh ec2-user@3.233.222.45 = pasword 
+  ssh landmark@3.233.222.45
+  ssh -i class25demo.pem landmark@3.233.222.45
+ssh -i "class25demo.pem" ec2-user@ec2-3-233-222-45.compute-1.amazonaws.com
+
+Managing Files, Folders and sub Folders
+In Linux folders = Directories 
+File structure in Linux :
+                        /  
+                           = root (Main)
+                        c: drive for Windows
+      /sbin /etc /tmp /lib   /home  /bin  /opt 
+
+home  = users
+===========
+ - ec2-user
+ - simon 
+ - landmark  
+ - olu 
+ - ade
+
+bin = binary files or commands 
+=============================
+- cd    = change Directory
+- ls    = list files and Directory
+- cat   = displays the content of a file
+- pwd   = present working directory
+- whoami
+
+sbin = system bin
+=================
+- adduser simon
+- useradd landmark
+- passwd simon
+- init 0
+users with elevated priviledges
+What is the difference between bin and sbin in Linux? 
+ sbin are binary flies only executable by users 
+   with admin/elevated priviledges 
+ bin files are executable by any user 
+
+
+  CREATE FILES OR FOLDERS (Directory) 
+    key.pem 
+    test.txt 
+    deploy.yml 
+    hello.py 
+    monitor.sh 
+    ec2.tf
+    hello.java
+    pom.xml
+
+
+LINUX SERVER = default files and directories  
+
+etc = configuration files
+======================== 
+  - /etc/passwd 
+  - /etc/shadow 
+  - /etc/ssh/sshd_config 
+
+tmp - temporal file holder 
+=========================
+
+opt = Install Softwares and Packages
+===
+ - maven 
+ - tommcat 
+
+lib  = 
+====
+
+proc 
+=======
+-  meminfo 
+-  cpuinfo 
+
+========================
+      ls /bin 
+      ls /sbin 
+      ls /tmp 
+      ls /opt 
+      ls /var
+      ls /lib 
+      ls /etc 
+sudo is use to escalate or elevate priviledges
+Linux Basic Commands:
+=====================
+  mkdir  = create directory     
+  ls = list fil and directories 
+  mkdir class25
+  mkdir devops
+  mkdir -v test 
+        -v verbose
+        -p create both parent and child directories 
+
+mkdir -pv Devops/SDLC/Linux/Jenkins/Git/Maven/Nexus/
+
+  mkdir  Devops/
+  mkdir  Devops/SDLC/
+  mkdir  Devops/SDLC/Linux/
+  mkdir  Devops/SDLC/Linux/Jenkins/
+  mkdir  Devops/SDLC/Linux/Jenkins/Git/
+  mkdir  Devops/SDLC/Linux/Jenkins/Git/Maven/
+  mkdir  Devops/SDLC/Linux/Jenkins/Git/Maven/Nexus/
+
+ tree 
+ yum install tree
+
+Linux is case sensitive  = 
+   test / Test / TEST are different files in Linux
+
+  mkdir -p  devops/Linux/Jenkins/Git/Maven/Nexus/
+
+      mkdir -v test/ebay
+
+ = tree cannot be found 
+
+ = yum install tree  -- permission denied 
+
+ sudo yum install tree
+
+classes users:
+    Normal users 
+      sudo adduser ade
+      sudo su - ade 
+    Root / superuser / admin 
+    system users 
+
+How to connect to a Linux server?
+ ssh-client: mobaXterm / puTTY /
+  Terminal / GitBash
+ remote-host: PublicIP / privateIP / hostName
+             3.233.222.45
+ userName: ec2-user / paul / foseh 
+ authentication: pasword / SSH-key
+
+ GUI = Graphical user interface 
+ CLI = Command Line interface
+       mkdir class25a 
+  
+rmdir it is use to delete empty directories
+
+mkdir use to create directories 
+
+rm -r use to delete directories 
+commands in Linux are in lower case
+
+pwd 
+
+/home/ec2-user/Devops/SDLC/Linux/Jenkins/Git/Maven
+
+cd ../../../../
+cd /tmp
+
+ ls -l 
+File management commands :
+touch test.txt 
+echo "This is class25"
+echo Jesus is in here > db.sql 
+echo I can either have a job or jobs 
+
+cat > hello.py
+
+cat hello.py 
+
+vi options:
+  command mode 
+  insert mode
+     before typing your data,
+   - type "i-key" to enter insert mode
+     once your are done,
+   - type "esc-key" to enter command mode 
+   - type ':wq' and press the enter-key to save
+   - type ':q!' and press the enter-key to quit without saving
+
+drwxrwxr-x. 2 ec2-user ec2-user
+
+This is for testing ONLY.
+Please make sure that Developers cover atleast 90% of unit testing
+Linux is very easy to understand.
+===================
+Creating files = 
+=======================
+   touch db.sh 
+
+Listing files and directories = ls 
+    
+    ls -l  = long list
+    ls -a  = display hidden files and directories
+    ls -la = 
+    ls -lt = 
+    ls -ltr = 
+  
+  Directories starts with D and appears in BLUE
+  Files start with a "-" and appears in white
+
+      mkdir -v test/ebay
+
+pwd: = present working directory
+================================  
+
+      cd  = change directory 
+      cd class24
+            mkdir sre 
+      cd class23/sre/platform
+      cd - 
+      cd 
+
+      cd devops/Linux/Jenkins/Git/Maven/Nexus/
+      cd /opt 
+      cd /tmp
+
+      cd ../../..
+
+      mkdir class23/sre/platform
+
+    pwd   = present working directory      
+
+    clear  = clears your screen
+
+    tree: list files and directories in a tree structure
+
+    yum install tree 
+
+    sudo yum install tree 
+
+
+   ssh 
+
+   ssh -i "key24b.pem" ec2-user@ec2-54-157-161-24.compute-1.amazonaws.com
+
+File Management commands: 
+  touch  = create an empty file 
+  touch test.db 
+
+  echo  = to create and add content to a file 
+          display contents to users 
+  echo simon 
+  echo  'DevOps is great. Study it with your loveone' > dev.txt 
+
+  cat dev.txt 
+
+  vi deploy.sh 
+
+Text editors:
+  sublime  
+  vi or vim is use to create and modify files :
+
+    vi deploy.sh 
+
+    1. Type 'i' to enter insert mode 
+       This will permit modification 
+
+    2. Type 'esc' key to enter command mode 
+
+    3. Type ':wq!' or ':wq' and press enter to save and quit
+         press 'shift and do zz'
+
+    4. Type ":q!" and press enter to quit without saving
+
+ cat deploy.sh 
+
+  cat command to create file: 
+     cat > monitor.py
+  
+  use the # to comment 
+  cat > monitor.py 
+
+      typing your content
+
+      type ctl c to save and exit  
+
+displaying the content of a file: 
+  cat monitor.py  
+    1000 lines 
+
+  cat -n deploy.sh 
+
+  tail deploy.sh = displays the last 10 lines 
+
+  head -n = where 'n' number of lines required 
+
+  cat /etc/passwd 
+
+  cat /etc/ssh/sshd_config 
+
+  sudo cat /etc/ssh/sshd_config | grep ssh 
+
+  whoami 
+
+  less 
+
+  more 
+
+  Display specific content of a file 
+
+  grep docker deploy.sh 
+
+  grep ec2-user /etc/passwd 
+
+  text.py 
+
+  test.yml   -:- 
+
+cat -n log 
+ tail log = last 10 lines 
+ head log = first 10 lines  
+ tail -4 log = last 4 lines 
+ head -3 log = first 3 lines 
+
+  grep errors log 
+  cat log 
+  cat /tmp/error
+
+ hostname = this display the hostname 
+            of your server 
+ sudo hostname demo = this will change 
+                      hostname to demo 
+ remote host:
+
+ sbin 
+
+ rm FileName =  This will delete a file 
+ rm test.py
+ touch 
+ rm 
+ ls -lt 
+ ls -ltr
+
+ ls -la 
+
+ mkdir .kube 
+
+ touch .config 
+
+ rm config 
+
+19 modules  :
+ Kubernetes 
+
+
+File/Directory:   
+    r = 4
+    w = 2
+    x = 1
+       ---
+        7
+       ---
+  1  2      3          4       5    6     7       8
+type links permission owner  group  size  date  name
+  d  2     rwxrwxr-x. ec2     ec2   6   Jul 16    db  
+  -  1     rw-rw-r--
+ rw-    rw-    r  = dbs
+ 6       6     4  = 664 default settings 
+owner  group  others
+ rw      rw      rw  = expectation
+ 6       6       6
+ umask  = 0002
+ normal users          root
+  file    dir     file      dir  
+ 0666     0777    0666     0777
+ 0002     0002    0022     0022
+ ----    -----    ----     ----
+ 0664     0775    0644     0755
+ ----    ------   ----     ----
+ rwx r-x r-x
+ rw- r- -r
+directory
+owner  group  others
+ rwx      rwx      r-x  = 
+ 7        7        5    = 0775  default
+ 7        7        7    = 0777  expectation
+
+what is the umask for normal users?
+root 
+
+ sudo su  - 
+ 
+
+The admin is call root    
+
+  test.yml   :
+====================================
+ File permission 
+   permission denied  
+
+   system files 
+   and user's files 
+
+   /sbin  = admin access  
+
+ File:  
+  default permission:
+       read    write   
+       cat      vi      script 
+ Directories: 
+  default permission :
+      read    write         execute 
+      ls      touch mkdir     cd    
+
+read    = r  = 4
+write   = w  = 2
+execute = x  = 1
+
+          file      dir 
+default   rw       rwx 
+default   6         7 
+
+         Normal Users         Root User 
+ umask    0002                 0022 
+          0664                 0644  F 
+          0775                 0755  D
+
+         file    Dir       file    dir 
+Normal   0666   0777       0666    0777
+umask    0002   0002       0022    0022
+        ----    ----      -----    -----
+        0664    0775       0644    0755
+        ----   ----       -----   ------ 
+        Denis User 
+        file    dir 
+Normal  0666   0777
+umask   0222   0222
+        ----   ----
+        0444   0555
+        -----  ----       
+umask 0022
+
+  mkdir /apt/test 
+
+ owner  = rwx      rw                        
+ group  = rwx      r
+ others = r-x      r
+
+ sudo -i  or sudo su -
+        o  g   o 
+      -rw- r-- r--.  db 
+    d rwx r-x r-x. 2 root root   test 
+    d rwx rwx r-x. 3 ec2-user ec2-user  Devops    
+
+umask value for root user    = 0022
+umask value for normal users = 0002 
+
+ chmod 777 dbs 
+ sudo chown ade deploy.sh
+ sudo chgrp ade deploy.sh
+ sudo chown root:root dbs
+ sdo chown ade:ade -R java
+ -R will change Ownership Recursively
+      both parent and child 
+
+
+
+   groups 
+  ec2-user
+
+
+        rwx  = 7 
+
+    mkdir  
+
+
+  chmod 777 ds 
+        444 ds 
+  chmod 775 ds2 
+
+  775 
+
+   Devops/SDLC/Linux/Jenkins/Git/Maven/Nexus/
+
+chmod -R 500 Devops/SDLC/Linux/Jenkins/Git/Maven/Nexus/
+
+  R = Recursive 
+        
+Files with executable permissions appears in green
+
+  chmod 
+
+  -rwx r--r--. 1 ec2-user ec2-user 0 Apr 10 13:23 test.sh
+
+  adduser  = sbin 
+  useradd 
+  
+  sudo su - landmark 
+
+  su - landmark
+
+  chown 
+
+  sudo chown landmark:landmark monitor.py
+
+aws = amazon web services
+      servers = super computers 
+       0000
+ AA  = rw rw rw 
+ rbc  / boa 
+ 0666
+ 0000
+DevOper priviledges
+etc/sudoers    
+  sudo 
+file 
+chmod 
+chown 
+wc
+ln 
+soft  links 
+symbolic 
+short-cut 
+and
+ hard link is a copy 
+ ln monitor.sh  /tmp/alert.sh 
+ ln -s monitor.sh  /tmp/alert
+/opt
+Relative path 
+find / -name db 
+/opt 
+  package Management 
+
+user 
+configure password access
+
+ssh -i "class25demo.pem" ec2-user@ec2-3-233-222-45.compute-1.amazonaws.com
+
+
+
+GitBash
+ssh -i privateKey userName@hostName/IP
+
+ssh -i class25demo.pem ec2-user@3.233.222.45
+
+ssh -i Downloads/class25demo.pem ec2-user@3.233.222.45
+ cd Downloads 
+
+Relative and Absolute path  :
+  Absolute path start from the root directory
+     /home/ec2-user/hello.py 
+     /opt/nexus/bin/nexus.sh 
+  Relative path start from pwd 
+     hello.py 
+     nexus.sh 
+
+user Management : 
+  1. root user    = administrator  
+  2. normal users = users created by the admin
+                    such users can be granted admin priviledges
+                    1000 users  = 
+                    DE / Developers / QA  /   
+  3. system users = users created when installing 
+                    Softwares/applications like Jenkins 
+
+Creating users :
+ You must be the admin or posses admin priviledges
+     su - or 
+     sudo su -  = switch user to the root user  
+       useradd landmark 
+       sudo useradd dan 
+    Files for created users:
+      /home  = directory
+      /etc/group  = files
+      /etc/passwd = files
+      /etc/shadow = files
+ press: ctr 'c' to kill the process
+   switching users:
+      su - userName 
+      su - dan 
+  assign pass:  passwd userName 
+                passwd dan 
+                sudo passwd dan 
+                     admin123  
+       adduser 
+Granting admin / sudo priviledges to users:
+    1. Become root = sudo su - 
+         [root@demo ~]#
+          [normalUser@demo]$
+    2. vi into /etc/sudoers and add users detail
+  
+  groupadd groupName 
+  groupadd dev 
+  groupadd ops
+  groupadd devops 
+
+  usermod -aG devops dan 
+  usermod -aG groupName userName   
+ 
+ id userName 
+ id dan 
+
+ userdel userName
+ groupdel groupName
+
+ tail -5 /etc/group
+
+What is the difference between:
+  home/dir       pwd 
+    su -      &     su 
+    sudo su - & sudo su 
+    su - dan  & su dan 
+ mkdir ebay 
+
+ ssh dan@3.233.222.45
+
+  3.233.222.45 
+
+ ssh landmark@3.233.222.45
+
+We created our server in AWS 
+  SSH-PRIVATE-key = key.pem 
+
+Configure password access:
+  1. Become root or use sudo access 
+        sudo su - or sudo -i
+
+  2. sudo vi /etc/ssh/sshd_config 
+        and allow paasword access 
+        PasswordAuthentication yes
+ =#PasswordAuthentication yes
+ =#PermitEmptyPasswords no
+PasswordAuthentication yes
+
+    3. Restart ssh service  
+
+        systemctl restart sshd 
+
+    4. Assign password to users 
+         passwd ec2-user 
+         admin
+         admin 
+
+  date 
+
+  date -s "2 OCT 2006 18:00:00"
+ 
+  date -s "20 Jul 2021 21:20:55"
+
+sudo date -s "20 Jul 2021 21:20:55"
+
+sudo timedatectl set-timezone America/New_York
+
+df or df -h 
+du or du -h 
+
+hostname 
+sudo hostname clas25
+
+hostname -i: privateIP (172.31.8.197)
+
+curl ifconfig.co: PublicIP (3.233.222.45)
+====================================================
+Running notes 
+ ls pwd   
+
+ ssh -i "class25demo.pem" ec2-user@ec2-44-195-23-204.compute-1.amazonaws.com
+
+ ssh -i class25demo.pem ec2-user@44.195.23.204
+
+ port 23 23 80 443
+
+ telnet dan@web  = 23
+ ssh dan@web  = 22
+
+man ls 
+ ls -l 
+ ls -la 
+
+info ls 
+
+ls --help 
+
+whatis pwd 
+
+=======
+  service 
+
+ ssh (secure shell)  = protocol
+ sshd (where d = daemon/service) 
+
+  ps -ef | grep sshd 
+
+  ps -ef | grep tomcat 
+  
+  service
+  systemd 
+
+  systemctl status httpd
+  systemctl start httpd 
+  systemctl restart httpd
+  systemctl stop httpd 
+  systemctl enable httpd 
+  systemctl disable httpd
+
+
+  systemctl list-unit-files  
+
+  ssh -i key.pem dan@3.22.25.147
+  ssh dan@3.22.25.147
+    Configured to:
+      accept PasswordAuthentication
+
+yum is a package manager for redhat servers
+
+yum install httpd tree vim nano -y 
+
+  /var/www/html 
+yum remove httpd 
+
+  index.html
+    <h1>Welcome to Landmark class25</h1> 
+   <h2>JESUS IS LORD</h2>
+   <h2>DevOps MasterClass 25</h2>
+
+ vi /var/www/html/index.html
+Performance monitoring  = 
+   improve on uptime 
+
+clear : Clears the terminal screen.
+cal : Displays a calendar
+
+wget : The non-interactive network downloader.
+
+  https://downloads.apache.org/tomcat/tomcat-9/v9.0.50/bin/
+     apache-tomcat-9.0.50.zip
+
+ yum install wget  
+
+tee: It is a command used to store and view
+   (both at the same time) 
+   the output of any other command.
+
+   cat index.html | tee app.html
+   
+     
+
+script : This command records your login
+     session in a typescript in the 
+      current directory.
+
+ping: The ping command sends ICMP ECHO_REQUEST
+      to network hosts.
+      300 servers  = 
+ 
+  ping 
+
+ dns: domain name service 
+       it is use to create records and to resolve 
+         hostname 
+   google.com --> 142.250.81.206 - pointer (ptr) records
+   151.101.65.67 --> cnn.com -- A Records 
+   google.com --> gg --> alias name - Cname
+   olusegun --> olu --> 
+   
+   44.195.23.204 --> web.tekglobal.com
+
+   web.tekglobal.io ---> 44.195.23.204
+
+
+   http://44.195.23.204/
+   httpd must be running 
+
+  ICMP protocol must be open in the firewall/SG
+
+
+telnet:
+curl: 
+history : Displays the recently executed commands .
+uname:
+cat /etc/*releases
+netstat -tunlp:
+watch: Using watch command we can execute the command periodically.
+shutdown:
+restart:
+reboot:
+exit (OR) Ctrl +d (OR) logout
+
+
+
+
+
+ 
+  
+
+
+
+
